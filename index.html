@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kohl Goodfellow 2027 Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <a href="#about" class="logo">
+            <span class="logo-initials">KG</span>
+            <span class="logo-name">Kohl Goodfellow</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li class="dropdown">
+                    <a href="#projects">Projects</a>
+                    <ul class="submenu">
+                        <li><a href="#">Project 1</a></li>
+                        <li><a href="#">Project 2</a></li>
+                        <li><a href="#">Project 3</a></li>
+                        <li><a href="#">Project 4</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+    
+        </nav>
+    </header>
+    <main>
+        <!-- ===========================================
+            ABOUT/ Biography
+            Use CSS Gri: A Photo column and a text column.
+            On small screens the grid collapses to one column.
+        ============================================== -->
+        <section id="about" class="about">
+            <div class="about-photo">
+                <!-- Photo here -->
+                <span>KG</span>
+            </div>
+            <div class="about-text">
+                <h1>Hi, I'm Kohl Goodfellow</h1>
+                <p class="tagline">Computer &amp; Information Science, Class of 2027</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis veniam sint soluta ut maxime iusto consequuntur? Minima modi fugit fuga facere culpa est exercitationem adipisci omnis, necessitatibus eius ipsa voluptates!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta illum doloribus tenetur quis, eligendi accusantium nemo culpa a debitis ducimus sapiente consequatur similique quaerat, inventore illo ipsum asperiores! Incidunt, recusandae.</p>
+                <a href="#projects" class="button">See my Projects</a>
+            </div>
+        </section>
+        <!-- ================================================
+            Skills
+            A FLEXBOX row that wraps onto new lines as needed
+        ================================================= -->
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>HTML5</li>
+                <li>CSS 3</li>
+                <li>FLEXBOX</li>
+                <li>CSS Grid</li>
+                <li>Responsive Design</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>VS Code</li>
+                <li>Cybersecurity Basics</li>
+            </ul>
+        </section>
+         <!-- ================================================
+            PROJECTS
+            The card container uses CSS Grid with auto-fit, so
+            the number of columns changes with the screen width
+            WITHOUT any media queries.
+            Each card uses FLEXBOX (column direction) so the
+            "View project" link always sits at the bottom.
+        ================================================== -->
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
+            <p class="section-intro">
+                Work from my Junior &amp; Senior year in Computer &amp; Information Science. We work all of our senior year on thr campus of SUNY Canton.
+            </p>
+            <!-- ========== PROJECT CARD (copy this whole <article> to add a new card) ============ -->
+            <div class="card-grid">
+                
+                <article class="card">
+                    <div class="card-banner banner-html">
+                        My First Project
+                    </div>
+                    <div class="card-body">
+                        <h3>My First Project</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci commodi ipsa quasi cupiditate nobis similique nam cum est excepturi, reiciendis, sint natus eum inventore modi rerum labore dolorum sed quibusdam!</p>
+                        <ul class="tags">
+                            <li>HTML</li>
+                        </ul>
+                        <a href="#" class="card-link">View Project</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-banner banner-py">
+                        My First Project
+                    </div>
+                    <div class="card-body">
+                        <h3>My First Project</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci commodi ipsa quasi cupiditate nobis similique nam cum est excepturi, reiciendis, sint natus eum inventore modi rerum labore dolorum sed quibusdam!</p>
+                        <ul class="tags">
+                            <li>HTML</li>
+                        </ul>
+                        <a href="#" class="card-link">View Project</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-banner banner-js">
+                        My First Project
+                    </div>
+                    <div class="card-body">
+                        <h3>My First Project</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci commodi ipsa quasi cupiditate nobis similique nam cum est excepturi, reiciendis, sint natus eum inventore modi rerum labore dolorum sed quibusdam!</p>
+                        <ul class="tags">
+                            <li>HTML</li>
+                        </ul>
+                        <a href="#" class="card-link">View Project</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+        <!-- ================================================
+            FOOTER
+            Uses CSS Grid with three equal columns.
+            On small screens it stacks into a single column.
+        ================================================== -->
+    <footer id="contact" class="site-footer">
+        <div class="footer-grid">
+            <!-- Column 1: Contact -->
+            <div class="footer-col">
+                <h2>Contact</h2>
+                <ul>
+                    <li>Email: <a href="mailto:cte-kohl.goodfellow@sllboces.org">Kohl Goodfellow</a></li>
+                    <li>GitHub: <a href="https://slightyburntsteak.github.io/CIS26-27-Seniors/" target="_blank">My Portfolio</a></li>
+                    <li>St. Lawrence Lewis BOCES: <a href="https://www.sllboces.org//career-technical-education/cte-programs/software-development-and-business-design/" target="_blank">Computer &amp; Information Technology</a></li>
+                    <li>SUNY Canton Cybersecurity: <a href="https://www.sllboces.org//career-technical-education/cte-programs/software-development-and-business-design/" target="_blank">Cybersecurity</a></li>
+                    <li>SUNY Canton Game Development: <a href="https://www.canton.edu/csoet/game/" target="_blank">Game Design &amp; Development</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 2. Program Information -->
+            <div class="footer-col">
+                <h2>CIS Program</h2>
+                <ul>
+                    <li>SLL BOCES - Computer &amp; Information Science - Class of 2027</li>
+                    <li>State University of New York at Canton - Class of 2031</li>
+                    <li>Home High School: Massena Central School</li>
+                </ul>
+            </div>
+            <!-- Column 3. Goals and credentials -->
+            <div class="footer-col">
+                <h2>Goals &amp; Credentials</h2>
+                <ul>
+                    <li>Graduating: June 2027</li>
+                    <li>Certifications:
+                        <ul>
+                            <li>YouScience Computer Programming 2 Certification</li>
+                        </ul>
+                    </li>
+                    <li>College Credits: 
+                        <ul>
+                            <li>CYBR 153: Computer Logic &amp; Alogorithms - 3 Credits</li>
+                            <li>CYBR 172: Computer Fundamentals - 3 Credits</li>
+                            <li>CYBR 181: Programming Fundamentals - 3 Credits</li>
+                            <li>GMMD 101: Introduction to Media Studies - 3 Credits</li>
+                            <li>GAME 110: Fundamentals of Game Design - 3 Credits</li>
+                            <li>Total College Credits: 15</li>
+                        </ul>
+                    </li>
+                    <li>Next Step: Study Computers &amp; Teaching</li>
+                    <li><a href="#">Download my Resume</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Bottom Bar: Flexbox spreads these two items apart -->
+         <!-- Bottom bar: flexbox spreads these two apart -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kohl Goodfellow. All rights reserved.</p>
+            <a href="#about">Back to top</a>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,430 @@
+/* =============================
+PORTFOLIO STYLESHEET
+Table of content
+    1. Variables (colors and fonts)
+    2. Base / reset
+    3. Header and Navigation  (FLEXBOX)
+    4. About Section     (Grid)
+    5. Skills Section     (Flexbox)
+    6. Project Cards     (Grid auto-fit + FLEXBOX)
+    7. Footer          (Grid + FLEXBOX)
+    8. Responsive Media Queries
+============================= */
+
+/* --------------------- 1. Variables -----------------
+    Change a color here and it changes everywhere it's used. 
+*/
+:root {
+    --ink: #17324a; /* Dark Navy: header, footer, heading */
+    --ink-soft: #4a6075; /* Softer text */
+    --paper: #f5f8fa; /* Page background */
+    --white: #ffffff;
+    --line: #d3dde5; /* Borders */
+    --river: #1f7a8c; /* Main accent: links, buttons */
+    --river-dark: #165f6d;
+    --gold: #f2b134; /* highlight accent */
+
+    --font-head: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+    --font-body: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+
+    --max-width: 1100px;
+    --header-height: 70px;
+}
+
+/* -------------- 2. Base / reset -------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--ink);
+    background-color: var(--paper);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-head);
+    line-height: 1.2;
+}
+
+a {
+    color: var(--river);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Shared spacing for every main section */
+main section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+main h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+/* ------------------ 3. Header & Navigation (FLEXBOX) -------------------- */
+.site-header {
+    position: sticky; /* header stays at the top while scrolling */
+    top: 0;
+    z-index: 10;
+    height: var(--header-height);
+    background-color: var(--ink);
+    display: flex;
+    justify-content: space-between; /* logo left, nav right */
+    align-items: center; /* vertically centerd */
+    padding: 0 1.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.logo-initials {
+    font-family: var(--font-head);
+    font-weight: 700;
+    background-color: var(--gold);
+    color: var(--ink);
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-name {
+    font-family: var(--font-head);
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.main-nav a {
+    display: block;
+    padding: 0.5rem 0.9rem;
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.main-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ------- Dropdown Menu ----------- */
+/* 1. The parent <li> is the "anchor" the submenu is positioned against that anchor */
+
+.dropdown {
+    position: relative;
+}
+/* 2. The submenu is hidden and placed directly under its parent */
+.submenu {
+    display: none !important;
+    position: absolute;
+    top: 100%; /* Start right below parent link */
+    left: 0;
+    min-width: 200px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: var(--ink);
+    box-shadow: 0 6px 12px rgba(0,0,0, 0.25);
+    z-index: 10;
+
+}
+.submenu a {
+    font-weight: 400;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* 3. Show the submenu on mouse hover OR when a link inside has KEYBOARD focus. 
+    :focus-visible matches only heyboard (Tab) focus, not a mouse click,
+    so once the mouse rolls of the menu, the submenu hide again */
+
+.dropdown:hover .submenu,
+.dropdown:has(:focus-visible) .submenu {
+    display: block !important;
+}
+
+/* Small arrow after links that have a dropdown */
+.dropdown > a::after {
+    content: " \25BE";
+}
+
+/* ---------------------- 4. About Section (GRID) ---------------------- */
+.about {
+    display: grid;
+    grid-template-columns: 260px 1fr; 
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-photo {
+    aspect-ratio: 1 / 1;
+    background-color: var(--river);
+    border-radius: 50%;
+    border: 6px solid var(--gold);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+/* Replace when have photo */
+    align-items: center;
+    color: var(--white);
+    font-family: var(--font-head);
+    font-size: 4.5rem;
+    font-weight: 700;
+}
+
+.about-photo .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text h1 {
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    margin-bottom: 0.25rem;
+}
+
+.tagline {
+    color: var(--river-dark);
+    font-weight: 600;
+    
+}
+
+.about-text p {
+    max-width: 65ch; /* Keeps lines comfortable to read */
+    margin-bottom: 1rem;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--river);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.button:hover {
+    background-color: var(--river-dark);
+}
+
+/* --------------------- 5. SKILLS (FLEXBOX with wrap) --------------------- */
+.skills {
+    border-top: 1px solid var(--line);
+}
+
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 0.75rem;
+}
+
+.skills-list li {
+    padding: 0.5rem 1.1rem;
+    background-color: var(--white);
+    border: 3px dotted var(--ink);
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.skills-list li:hover {
+    border: 3px dotted var(--ink);
+}
+/* ------------------------ 6. PROJECT CARD (GRID & FLEXBOX ----------------- */
+.projects {
+    border-top: 1px solid var(--line);
+}
+
+.section-intro {
+    color: var(--ink-soft);
+    margin-top: -0.75rem;
+    margin-bottom: 2rem;
+}
+
+/* auto-fit + minmax = responsive card with NO media query
+    Each card is atleast 280px wide; the browser fits as many columns as it can and shares the leftover space evenly*/
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+}
+
+.card {
+    background-color: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column; /* stack the banner and body vertically */
+}
+
+.card-banner {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Courier New", monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+/* Banner color shows project type */
+.banner-html {
+    background-color: var(--ink);
+}
+.banner-css {
+    background-color: var(--river);
+}
+.banner-js {
+    background-color: #6b4c9a;
+}
+.banner-py {
+    background-color: var(--gold);
+}
+/* ----------------- */
+.card-body {
+    padding: 1.5rem;
+    flex-grow: 1; /* body fills remaning card height */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-body p {
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+}
+
+.tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.tags li {
+    font-size: 0.85rem;
+    padding: 0.15rem;
+    background-color: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+}
+
+.card-link {
+    margin-top: auto; /* pushes the link to the bottom of the card */
+    align-self: flex-start;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--gold);
+
+}
+
+.card-link:hover {
+    color: var(--river-dark);
+    border-bottom-color: var();
+}
+
+
+
+
+
+/* ------------------------ 7. FOOTER (GRID & FLEXBOX) ---------------------- */
+
+.site-footer {
+    background-color: var(--ink);
+    color: var(--white);
+    padding: 3.5rem 1.5rem 1.5rem;
+}
+
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    gap: 2.5rem;
+}
+
+.footer-col h2 {
+    font-size: 1.2rem;
+    color: var(--white);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid var(--gold);
+    display: inline-block;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.footer-col a {
+    color: var(--line);
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.footer-col a:hover {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    max-width: var(--max-width);
+    margin: 2.5rem auto 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
