@@ -1,0 +1,6 @@
+print("--=======--")
+print("\   o o  /")
+print(" \  -O- /")
+print("  \    /")
+print("   \  /")
+print("    \/")

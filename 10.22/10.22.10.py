@@ -1,0 +1,7 @@
+print("  (^)_(^)       ------------  ")
+print(" |       |     /  Welcome   \ ")
+print(" <<  u  >>  ==<     New      > ")
+print("  \_____/      \ Programmer / ")
+print(". { . . }       ------------  ")
+print(". / | |  \             ")
+print(" v-v---v-v             ")

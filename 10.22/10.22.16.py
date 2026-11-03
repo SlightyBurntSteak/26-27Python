@@ -1,0 +1,5 @@
+print("============ ENG =========== | ========== ESP ==========")
+print("Good Morning.                |  Buen día.       ")
+print("It is a pleasure to meet you.|  Es un placer conocerte. ")
+print("Please call me tomorrow.     |  Por favor, llámame mañana. ")
+print("Have a nice day.             |  Que tengas un buen día. ")

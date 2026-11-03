@@ -1,0 +1,7 @@
+print("Sales Tax Rates")
+print("---------------")
+print("New York: 4.00%")
+print("California: 7.25%")
+print("Texas: 6.25%")
+print("Florida: 6.00%")
+print("Illinois: 6.25%")
